@@ -72,3 +72,6 @@ https://play.google.com/store/apps/details?id=com.here.app.maps
 VarageSale
 https://play.google.com/store/apps/details?id=com.codified.hipyard
 
+Hockey Scores
+https://play.google.com/store/apps/details?id=com.sports.schedules.scores.hockey.nhl
+
