@@ -69,3 +69,6 @@ https://play.google.com/store/apps/details?id=com.generalmagic.magicearth
 HERE WeGo Navigation
 https://play.google.com/store/apps/details?id=com.here.app.maps
 
+VarageSale
+https://play.google.com/store/apps/details?id=com.codified.hipyard
+
