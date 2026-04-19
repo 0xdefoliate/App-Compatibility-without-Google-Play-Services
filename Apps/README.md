@@ -1,5 +1,2 @@
 # Apps (❗Not Yet Completed! Work in Progress❗)
-
-To add a new app:
-1. Create a new folder with the app name
-2. Add a README.md file inside with app information
+This File structure is still incomplete and being worked on in my spare time. for  current app information, please refer to the `tested apps.txt` file under the `Code` section. Check back here later for a better system!
