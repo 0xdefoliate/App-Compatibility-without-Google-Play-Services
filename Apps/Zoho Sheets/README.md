@@ -1,5 +1,5 @@
 # Zoho Sheets
-Slideshow app
+Spreadsheets app
 
 Notifications; not tested
 
