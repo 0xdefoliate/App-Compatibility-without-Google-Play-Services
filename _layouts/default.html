@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="{{ site.description}}">
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <title>{{ site.title }}</title>
+    </head>
+    <body>
+        <nav class="navbar">
+            <span class="brand">{{ site.title }}</span>
+            <div class="links">
+                <a class="link" href="{{ site.repo }}"> 
+                    <i class="bi bi-github"></i>
+                    <span>
+                        Star on GitHub
+                    </span>
+                </a>
+            </div>
+        </nav>
+        <div>
+            {{ content }}
+        </div>
+    </body>
+</html>
