@@ -2,15 +2,13 @@
 layout: default
 ---
 
-<h1>Apps</h1>
-
 <div class="apps">
     {% for app in site.apps %}
         <div class="app">
             <div class="title">
                 <h2>{{ app.name }}</h2>
 
-                <span class="badge version" title="The version the app is tested for">
+                <span class="badge" title="The version the app is tested for">
                     <code>v{{ app.version }}</code>
                 </span>
             </div>

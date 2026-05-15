@@ -1,94 +1,194 @@
 ---
 ---
- 
-@import "{{ site.theme }}";
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
 
 :root {
-    --font: sans-serif;
-    --header-height: 110px;
-    --header-gap: 100px;
+    font-family: sans-serif;
+    --navbar-height: 110px;
+
+    --bg: #fff;
+    --fg: #101010;
+    --border-colour: #cfcfcf;
+    --play-store-button-colour: #303030;
+
+    @media (prefers-color-scheme: dark) {
+        --bg: #0f0f0f;
+        --fg: #e0e0e0;
+        --border-colour: #444444;
+        --play-store-button-colour: #606060;
+    }
 }
 
-header {
-    background: black !important;
-    border: none;
-    height: calc(var(--header-height) - 16px); // account for padding
-    padding: 16px;
+@mixin is-large-mobile {
+    @media (max-width: 840px) {
+        @content;
+    }
+}
+
+@mixin is-medium-mobile {
+    @media (max-width: 555px) {
+        @content;
+    }
+}
+
+@mixin is-small-mobile {
+    @media (max-width: 440px) {
+        @content;
+    }
+}
+
+.navbar {
+    width: 100dvw;
+    height: var(--navbar-height);
+
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
+    justify-content: space-between;
+    align-items: center;
 
-#banner {
-    display: none;
-}
+    @media (prefers-color-scheme: light) {
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .35)
+    }
 
-* {
-    font-family: var(--font) !important;
+    @media (prefers-color-scheme: dark) {
+        border-bottom: 1px solid #4e4e4e;
+    }
+
+    .brand {
+        padding: 32px;
+        font-size: 2rem;
+        user-select: none;
+
+        @include is-large-mobile {
+            font-size: 1.5rem;
+        }
+
+        @include is-medium-mobile {
+            font-size: 1.25rem;
+            padding: 16px;
+        }
+
+        @include is-small-mobile {
+            font-size: 1.1rem;
+            padding: 8px;
+        }
+    }
+
+    .links {
+        padding: 16px;
+
+        .link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--fg);
+            text-decoration: none;
+            
+            i {
+                font-size: 1.5rem;
+            }
+
+            @include is-large-mobile {
+                i {
+                    font-size: 2rem;
+                }
+
+                span {
+                    display: none;
+                }
+            }
+
+            @media (min-width: 841px) {
+                border: 1px solid var(--border-colour);
+                padding: 8px
+            }
+        }
+    }
 }
 
 body {
-    background: #f0f0f0;
+    background-color: var(--bg);
+    color: var(--fg);
+    margin: 0;
+    padding: 0;
+}
+
+body > div {
+    width: 100%;
+    height: calc(100dvh - var(--navbar-height));
 }
 
 .apps {
     display: flex;
     flex-direction: column;
-    gap: 12px
+    gap: 24px;
+    margin-top: 32px;
+    padding-bottom: 8px;
 }
 
 .app {
-    box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    @media (prefers-color-scheme: light) {
+        box-shadow: 0 0 2px rgba(0, 0, 0, .5);
+    }
 
-    padding: .8rem;
-    border-radius: 8px;
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid var(--border-colour)
+    }
+
+    padding: 6px;
+    border-radius: 2px;
+    
+    margin: 0 32px;
+
+    @include is-medium-mobile {
+        margin: 0 8px;
+    }
 
     h2, h3 {
         display: flex;
         align-items: center;
         gap: 8px;
+        margin: 4px 0;
     }
 
     .title {
         display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: space-between;
-    }
 
-    // TODO: remove this
-    .badge.version {}
+        font-size: 1.15rem;
 
-    .footer {
-        margin-top: 24px;
+        @include is-medium-mobile {
+            font-size: 1rem;
+        }
 
-        a {
-            padding: 8px;
-            background-color: #2e2e2e;
-            color: white;
-            font-size: 1.2rem;
-            border-radius: 8px;
-            font-weight: 100;
+        @include is-small-mobile {
+            font-size: 0.75rem;
         }
     }
-}
 
-// Prevents an overflow bug in the Table of Contents
-.wrapper {
-    > nav {
-        top: calc(var(--header-height) + var(--header-gap));
-        overflow-y: auto;
-        height: calc(100vh - (var(--header-height) + var(--header-gap)))
+    .badge code {
+        padding: 6px 4px;
+        border: 1px solid var(--border-colour);
+        font-size: 0.7rem;
+
+        @media (prefers-color-scheme: light) {
+            box-shadow: 0 0 2px rgba(0, 0, 0, .5)
+        }
     }
 
-    > section {
-        margin-top: calc(var(--header-height) + var(--header-gap))
-    }
+    .footer {
+        margin-top: 16px;
 
-    > footer {
-        display: none
-    }
-
-    ::-webkit-scrollbar {
-        display: none;
+        .play-store-link {
+            display: block;
+            width: max-content;
+            background-color: var(--play-store-button-colour);
+            color: #e0e0e0;
+            text-decoration: none;
+            padding: 8px
+        }
     }
 }
