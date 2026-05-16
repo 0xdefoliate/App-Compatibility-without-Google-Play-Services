@@ -1,5 +1,5 @@
 ---
-name: AIMP Music PLayer
+name: AIMP Music Player
 description: "A feature rich music player"
 notes: "Everything functions"
 version: 4.25.1673
